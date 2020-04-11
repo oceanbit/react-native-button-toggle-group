@@ -1,6 +1,6 @@
 {
   "name": "react-native-button-toggle-group",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -30,5 +30,13 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.8",
     "react-native-paper": "^3.8.0"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "react native",
+    "button-toggle-group",
+    "button toggle group",
+    "material-design",
+    "material design"
+  ]
 }
