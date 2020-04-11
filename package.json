@@ -1,0 +1,34 @@
+{
+  "name": "react-native-button-toggle-group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "eslint --fix ./*.js",
+    "lint": "eslint ./*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crutchcorn/react-native-button-toggle-group.git"
+  },
+  "author": "Corbin Crutchley <crutchcorn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crutchcorn/react-native-button-toggle-group/issues"
+  },
+  "homepage": "https://github.com/crutchcorn/react-native-button-toggle-group#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.4",
+    "react": "^16.9.0"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.8",
+    "react-native-paper": "^3.8.0"
+  }
+}
