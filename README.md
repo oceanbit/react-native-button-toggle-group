@@ -1,5 +1,11 @@
-# React Native Button Toggle Group
+<h1 align="center">
+  React Native Button Toggle Group
+</h1>
+<div align="center">
 
+[![Our npm path](https://badgen.net/npm/v/react-native-button-toggle-group)](https://www.npmjs.com/package/react-native-button-toggle-group/)
+
+</div>
 
 ## Install
 
