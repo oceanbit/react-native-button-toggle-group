@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Animated, View, Text, StyleSheet } from "react-native";
+import { Animated, View, Text, StyleSheet, Platform } from "react-native";
 import { TouchableRipple } from "react-native-paper";
 import MaskedView from "@react-native-community/masked-view";
 
@@ -60,6 +60,14 @@ const ButtonToggleGroup = ({
 		backgroundColor: inactiveBackgroundColor,
 	};
 
+	/**
+	 * For whatever reason, the `zIndex: -1` on Text works on Android, but does not work
+	 * on iOS. However, when we can get away with only removing the Text from zIndex,
+	 * the ripple effect continues to work on Android. As such, we conditionally
+	 * apply the logic for Android vs iOS
+	 */
+	const inactiveContainerIOS = Platform.OS === 'ios' ? {zIndex: -1} : {};
+
 	return (
 		<View style={[styles.container, style]}>
 			<MaskedView
@@ -106,7 +114,7 @@ const ButtonToggleGroup = ({
 				</View>
 			</MaskedView>
 			<View
-				style={[styles.baseButtonContainer, styles.inactiveButtonContainer]}
+				style={[styles.baseButtonContainer, styles.inactiveButtonContainer, inactiveContainerIOS]}
 			>
 				{values.map((value, i) => (
 					<TouchableRipple
