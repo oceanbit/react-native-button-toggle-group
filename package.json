@@ -1,6 +1,6 @@
 {
   "name": "react-native-button-toggle-group",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "An animated button toggle group for string selection",
   "main": "index.js",
   "types": "index.d.ts",
