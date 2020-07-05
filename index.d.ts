@@ -1,7 +1,9 @@
+import { Component } from "react";
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
 
 export interface ButtonToggleGroupProps {
 	values: string[];
+	value: string;
 	onSelect: (val: string) => void;
 	style?: StyleProp<ViewStyle>;
 	highlightBackgroundColor: string;
@@ -11,7 +13,7 @@ export interface ButtonToggleGroupProps {
 	textStyle?: StyleProp<TextStyle>;
 }
 
-export default class ButtonToggleGroup extends React.Component<
+export default class ButtonToggleGroup extends Component<
 	ButtonToggleGroupProps,
 	any
 > {}

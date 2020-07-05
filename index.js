@@ -5,6 +5,7 @@ import MaskedView from "@react-native-community/masked-view";
 
 const ButtonToggleGroup = ({
 	values,
+	value,
 	onSelect,
 	style,
 	highlightBackgroundColor,
@@ -39,6 +40,14 @@ const ButtonToggleGroup = ({
 		});
 	}, [widthSize, selectedPanelLeft, selectedIndex]);
 
+	React.useEffect(() => {
+		const newIndex = values.findIndex((v) => v === value);
+		setPrevSelectedIndex(selectedIndex);
+		setSelectedIndex(newIndex);
+	}, [values, value, selectedIndex]);
+
+	// This allows the text to render under the related animation while the mask is gliding across
+	// Notice the `.start(setPrevIndex)` to reset the previous index once the animation has stabilized
 	const maxIndex =
 		selectedIndex > prevSelectedIndex ? selectedIndex : prevSelectedIndex;
 	const minIndex =
@@ -66,7 +75,7 @@ const ButtonToggleGroup = ({
 	 * the ripple effect continues to work on Android. As such, we conditionally
 	 * apply the logic for Android vs iOS
 	 */
-	const inactiveContainerIOS = Platform.OS === 'ios' ? {zIndex: -1} : {};
+	const inactiveContainerIOS = Platform.OS === "ios" ? { zIndex: -1 } : {};
 
 	return (
 		<View style={[styles.container, style]}>
@@ -114,7 +123,11 @@ const ButtonToggleGroup = ({
 				</View>
 			</MaskedView>
 			<View
-				style={[styles.baseButtonContainer, styles.inactiveButtonContainer, inactiveContainerIOS]}
+				style={[
+					styles.baseButtonContainer,
+					styles.inactiveButtonContainer,
+					inactiveContainerIOS,
+				]}
 			>
 				{values.map((value, i) => (
 					<TouchableRipple
