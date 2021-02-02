@@ -78,8 +78,14 @@ const ButtonToggleGroup = ({
 	const inactiveContainerIOS = Platform.OS === "ios" ? { zIndex: -1 } : {};
 
 	return (
-		<View style={[styles.container, style]}>
+		<View
+			style={[styles.container, style]}
+			accessible
+			accessibilityRole="radiogroup"
+		>
 			<MaskedView
+				importantForAccessibility={"no-hide-descendants"}
+				accessibilityElementsHidden={true}
 				key={selectedIndex}
 				style={styles.maskViewContainer}
 				maskElement={
@@ -131,6 +137,9 @@ const ButtonToggleGroup = ({
 			>
 				{values.map((value, i) => (
 					<TouchableRipple
+						accessibilityRole="radio"
+						accessibilityState={{ checked: selectedIndex === i }}
+						accessibilityLiveRegion="polite"
 						key={i}
 						style={[
 							styles.baseTouchableRipple,
