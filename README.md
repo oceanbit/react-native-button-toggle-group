@@ -30,14 +30,19 @@ import ButtonToggleGroup from 'react-native-button-toggle-group';
 
 // ...
 
+const [value, setValue] = React.useState('Light');
+
+return (
 <ButtonToggleGroup
     highlightBackgroundColor={'blue'}
     highlightTextColor={'white'}
     inactiveBackgroundColor={'transparent'}
     inactiveTextColor={'grey'}
     values={['Auto', 'Light', 'Dark']}
-    onSelect={val => console.log(val)}
+    value={value}
+    onSelect={val => setValue(val)}
 />
+)
 ```
 
 ## Props
@@ -45,6 +50,7 @@ import ButtonToggleGroup from 'react-native-button-toggle-group';
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 |  `values`        | `string[]` | The list of strings to render as options for the button group |
+|  `value`        | `string` | The string to render as the selected option |
 |  `onSelect`        | `(val: string) => void` | A function that's called whenever one of the values is selected |
 |  `highlightBackgroundColor`        | `string` | The color that the selected background will be. In the above GIF, it's blue. |
 |  `highlightTextColor`        | `string` | The color that the selected text will be. In the above GIF, it's white. |
