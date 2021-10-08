@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Animated, View, Text, StyleSheet, Platform } from "react-native";
 import { TouchableRipple } from "react-native-paper";
-import MaskedView from "@react-native-community/masked-view";
+import MaskedView from "@react-native-masked-view/masked-view";
 
 const ButtonToggleGroup = ({
 	values,
@@ -88,6 +88,7 @@ const ButtonToggleGroup = ({
 				accessibilityElementsHidden={true}
 				key={selectedIndex}
 				style={styles.maskViewContainer}
+				androidRenderingMode={"software"}
 				maskElement={
 					<Animated.View
 						style={[
