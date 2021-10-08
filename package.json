@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "eslint --fix ./*.{js,ts}",
     "lint": "eslint ./*.{js,ts}",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,19 +22,19 @@
   },
   "homepage": "https://github.com/crutchcorn/react-native-button-toggle-group#readme",
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
-    "@typescript-eslint/eslint-plugin": "^3.3.0",
-    "@typescript-eslint/parser": "^3.3.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.4",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.0",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
-    "standard-version": "^8.0.0",
+    "standard-version": "^9.3.1",
     "typescript": "^4.4.3"
   },
   "dependencies": {
@@ -48,12 +49,6 @@
     "material-design",
     "material design"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
       "npm run format"
